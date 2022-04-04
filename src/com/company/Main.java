@@ -11,10 +11,8 @@ public class Main {
     public static final char[] ALPHABET = {'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р',
             'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
             'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я',
-            '.', ',', '”', ':', '-', '!', ' ', '»', '«', '—', '(', ')' };
-    public static String str = "Губы его всегда сухи. " +
-            "Внутри его шершавого рта медленно шевелится наждачный язык, стирая в пыль последние чёрные зубы.";
-    public static String st = "! я ,";
+            '.', ',', '”', ':', '-', '!', ' ', '»', '«', '—', '(', ')'};
+
     public static String source = "src/resources/text.txt"; //дефолтный файл для чтения
     public static String dest = "src/resources/dest.txt";//дефолтный файл для записи
     public static final String PLS_ENTER_THE_SOURCE = "ПОЖАЛУЙСТА ВВЕСТИ СУРС ИЛИ ЖМИ 1";
@@ -25,6 +23,8 @@ public class Main {
     public static final String QUESTION = "ВВЕСТИ 1 ДЛЯ ШИФРОВАТЕЛЬ ВВЕСТИ 2 ДЛЯ ДЕШИФРОВАТЕЛЬ 3 ДЛЯ БРУТФОРС";
     public static final String CYPHERED = "ТЕКСТ ЗАШИФРОВАНО";
     public static final String DECYPHERED = "ТЕКСТ РАСШИФРОВАНО";
+    public static final String WRONG_NUMBER = "ВВЕДДИТЕНО НЕ ТО ЧИСЛО ВВЕДИТЕ ТО ЧИСЛО";
+    public static final String BRUTEFORCE = "ПРОИЗВЕДЕН БРУТФОРС";
 
     public static void main(String[] args) {
 
@@ -61,7 +61,7 @@ public class Main {
         System.out.println(QUESTION);//спрашиваем, что должна делать программа
         int answer = scan.nextInt();//answer == 1 - шифровка, 2 -- дешифровка, 3 - брутфорс
         while (answer != 1 && answer != 2 && answer != 3) {
-            System.out.println("ВВЕДДИТЕНО НЕ ТО ЧИСЛО ВВЕДИТЕ ТО ЧИСЛО");
+            System.out.println(WRONG_NUMBER);
             answer = scan.nextInt();
         }
         if (answer == 3) bruteforce(src, dstn);
@@ -140,7 +140,7 @@ public class Main {
                     System.out.println(e.getMessage());
                 }
             }
-            System.out.println("ПРОИЗВЕДЕН БРУТФОРС");
+            System.out.println(BRUTEFORCE);
 
 
     }
